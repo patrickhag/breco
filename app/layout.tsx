@@ -1,0 +1,4 @@
+import type { Metadata } from 'next';
+import './globals.css';
+export const metadata: Metadata = { metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'), title: 'Breco — Every conversation, an opportunity.', openGraph: { images: [{ url: '/images/breco-social.avif', width: 1200, height: 630, alt: 'Breco — Every conversation. A new customer.' }] }, description: 'Turn visitors into customers with an AI chatbot that knows your business. Train on your website, capture leads, and support customers around the clock.' };
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="en" data-theme="dark" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: `try { const theme = localStorage.getItem('breco-theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch {}` }} /></head><body>{children}</body></html>; }
